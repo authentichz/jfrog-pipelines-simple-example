@@ -1,13 +1,4 @@
 resources:
-  # Build info of first build to bundle
-  - name: gosvc_promoted_build_info
-    type: BuildInfo
-    configuration:
-      sourceArtifactory: myArtifactory
-      buildName: svc_build
-      buildNumber: 1
- 
-
   # Release bundle
   - name: release_bundle
     type: ReleaseBundle
@@ -38,27 +29,7 @@ resources:
         
 pipelines:
   - name: demo_release_mgmt
-    steps:
-      - name: bundle
-        type: CreateReleaseBundle
-        configuration:
-          releaseBundleName: test-release-distribution
-          releaseBundleVersion: v1.0.${run_number}
-          dryRun: false
-          sign: false
-          description: "some random test description"
-          inputResources:
-            - name: gosvc_promoted_build_info
-              trigger: true
-          outputResources:
-            - name: release_bundle
-          releaseNotes:
-            syntax: markdown
-            content: |
-              ## Heading
-                * Bullet
-                * Points
-             
+    steps:        
       - name: sign
         type: SignReleaseBundle
         configuration:
