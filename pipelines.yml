@@ -50,8 +50,6 @@ pipelines:
           inputResources:
             - name: gosvc_promoted_build_info
               trigger: true
-            - name: appl_promoted_build_info
-              trigger: true
           outputResources:
             - name: release_bundle
           releaseNotes:
