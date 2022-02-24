@@ -11,7 +11,7 @@ resources:
   - name: appl_promoted_build_info
     type: BuildInfo
     configuration:
-      sourceArtifactory: demoArt
+      sourceArtifactory: Test-Repo-Local
       buildName: backend_build
       buildNumber: 1
  
@@ -39,8 +39,9 @@ resources:
       serviceName: "*"
       siteName: "*"
       cityName: "*"
-      countryCodes: "*"
-
+      countryCodes:
+        - "US"
+        - "GB"
         
 pipelines:
   - name: demo_release_mgmt
