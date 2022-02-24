@@ -21,8 +21,8 @@ resources:
     type: ReleaseBundle
     configuration:
       sourceDistribution: myDist
-      name: demo_rb
-      version: v1.0.0
+      name: test-release-distribution
+      version: v1.0
  
   # Distribution rules
   - name: distribution_rules
@@ -42,7 +42,7 @@ pipelines:
       - name: bundle
         type: CreateReleaseBundle
         configuration:
-          releaseBundleName: demo_rb
+          releaseBundleName: test-release-distribution
           releaseBundleVersion: v1.0.${run_number}
           dryRun: false
           sign: false
