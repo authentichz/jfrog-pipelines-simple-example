@@ -13,8 +13,8 @@ resources:
     type: ReleaseBundle
     configuration:
       sourceDistribution: myDist
-      name: demo_rb
-      version: v1.0.0
+      name: test-release-distribution
+      version: v1.0
  
   # Signed version of the same release bundle
   - name: signed_bundle
